@@ -5,9 +5,9 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ComicBooksController()
+        public ActionResult Details()
         {
-
+            return View();
         }
     }
 }
