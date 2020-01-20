@@ -9,14 +9,47 @@
     <Folder Include="Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Views\ComicBooks\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\ComicBookController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\ComicBooks\_ViewStart.cshtml" />
+    <Content Remove="wwwroot\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Remove="wwwroot\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Remove="wwwroot\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Remove="wwwroot\js\jquery-1.10.2.min.js" />
+    <Content Remove="wwwroot\js\jquery-1.10.2.min.map" />
+    <Content Remove="wwwroot\js\modernizr-2.6.2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Remove="Scripts\bootstrap.min.js" />
+    <None Remove="Scripts\jquery-1.10.2.js" />
+    <None Remove="Images\bone-50.jpg" />
+    <None Remove="Images\the-amazing-spider-man-657.jpg" />
+    <None Remove="Images\the-amazing-spider-man-700.jpg" />
+    <None Remove="Fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\Fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\Fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\Fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\js\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\js\jquery-1.10.2.min.map" />
+    <None Include="wwwroot\js\modernizr-2.6.2.js" />
   </ItemGroup>
 </Project>

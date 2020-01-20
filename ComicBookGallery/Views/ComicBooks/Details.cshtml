@@ -1,37 +1,23 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Comic Book Detail";
 }
 
-<!DOCTYPE html>
+ 
+<h1>@ViewBag.SeriesTitle</h1>
+<h2>Issue # @ViewBag.IssueNumber</h2>
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Details</title>
-</head>
+<div>Description: @Html.Raw(ViewBag.Description)</div>
 
-<body>
-    <h1>@ViewBag.SeriesTitle</h1>
-    <h2>Issue # @ViewBag.IssueNumber</h2>
-
-    <div>Description: @Html.Raw(ViewBag.Description)</div>
-
-    @if (ViewBag.Artists.Length > 0)
-    {
-        <h5>Artist: </h5>
-        <div>
-            <ul>
-                @foreach (var artist in ViewBag.Artists)
-                {
-                    <li>@artist</li>
-                }
-            </ul>
-        </div>
-    }
-
-</body>
-
-</html>
+@if (ViewBag.Artists.Length > 0)
+{
+<h5>Artist: </h5>
+<div>
+    <ul>
+        @foreach (var artist in ViewBag.Artists)
+        {
+            <li>@artist</li>
+        }
+    </ul>
+</div>
+}
