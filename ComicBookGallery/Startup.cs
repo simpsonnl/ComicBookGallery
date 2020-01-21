@@ -53,7 +53,7 @@ namespace ComicBookGallery
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller=ComicBooks}/{action=Index}/{id?}");
             });
         }
     }

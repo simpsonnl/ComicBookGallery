@@ -14,6 +14,12 @@ namespace ComicBookGallery.Controllers
             _comicBookRepository = new ComicBookRepository();
         }
 
+        public ActionResult Index()
+        {
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            return View(comicBooks);
+        }
+
         //? means that a null could be passed as an argument
         public ActionResult Details(int? id)
         {
@@ -23,11 +29,6 @@ namespace ComicBookGallery.Controllers
             }
 
             ComicBook comicBook = _comicBookRepository.GetComicBook((int)id);
-
-            if (comicBook == null)
-            {
-                return NotFound();
-            }
 
             return View(comicBook);
         }
