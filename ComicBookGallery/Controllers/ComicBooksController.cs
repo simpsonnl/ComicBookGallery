@@ -1,4 +1,5 @@
 ﻿using System;
+using ComicBookGallery.Data;
 using ComicBookGallery.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,24 +7,27 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ActionResult Details()
+        private ComicBookRepository _comicBookRepository = null;
+
+        public ComicBooksController()
         {
-            var comicBook = new ComicBook()
+            _comicBookRepository = new ComicBookRepository();
+        }
+
+        //? means that a null could be passed as an argument
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
             {
-                SeriesTitle = "The Amazing Spider-Man",
-                IssueNumber = 700,
-                DescriptionHtml = "<p>Final issue! Witness the final hours of Doctor Octopus' " +
-                                    "life and his one, last, great act of revenge! Even if Spider-Man survives... " +
-                                    "<strong>will Peter Parker?</strong></p>",
-                Artists = new Artist[]
-                {
-                    new Artist() { Name = "Dan Slott", Role = "Script"},
-                    new Artist() { Name = "Humberto Ramos", Role = "Pencils"},
-                    new Artist() { Name = "Victor Olazaba", Role = "Inks"},
-                    new Artist() { Name = "Edgar Delgado", Role = "Colors"},
-                    new Artist() { Name = "Chris Eliopoulos", Role = "Letters"},
-                }
-            };
+                return NotFound();
+            }
+
+            ComicBook comicBook = _comicBookRepository.GetComicBook((int)id);
+
+            if (comicBook == null)
+            {
+                return NotFound();
+            }
 
             return View(comicBook);
         }
